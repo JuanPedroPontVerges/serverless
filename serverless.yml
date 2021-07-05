@@ -1,0 +1,31 @@
+service: my-serverless-proyect
+
+app: my-serverless-proyect
+org: juanpedro
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: python3.6
+  lambdaHashingVersion: 20201221
+
+functions:
+  webapi:
+    handler: webapi.handler
+    events:
+      - http:
+          path: /
+          method: post
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    dockerFile: Dockerfile
+    dockerExtraFiles:
+      - /usr/lib64/libpoppler-cpp.so.10      
+      - /usr/lib64/libpoppler.so.46          
+      - /usr/lib64/libopenjpeg.so.2
