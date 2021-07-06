@@ -12,8 +12,9 @@ This backend is built on [Serverless](https://www.serverless.com//).
 
 ```bash
 # Installs serverless-python-requirements package to bundle your python dependencies specified in your requirements.txt
-$ npm install
 $ npm install -g serverless
+$ serverless
+$ npm install
 # Configures your AWS Keys for creating a Lambda service
 $ aws configure
 ```
